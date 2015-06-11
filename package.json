@@ -19,6 +19,10 @@
     "/test/",
     "/demo/"
   ],
+  "scripts": {
+    "postinstall": "bower install",
+    "test": "gulp test:remote"
+  },
   "devDependencies": {
     "bower": "^1.4.1",
     "browser-sync": "^2.7.6",
