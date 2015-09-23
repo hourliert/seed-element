@@ -26,11 +26,11 @@ var browserSyncConfig = function(path, cb) {
 };
 
 var watchComponent = function() {
-  gulp.watch(['./src/*.{js,html}', 'demo/**/*.html', 'test/**/*.html'], ['js', 'jshint', bs.reload]);
+  gulp.watch(['./src/*.{js,html}', 'demo/**/*.html', 'test/**/*.html'], ['js', bs.reload]);
 };
 
 // Transpile all JS to ES5.
-gulp.task('js', function () {
+gulp.task('js', ['jshint'], function () {
   return gulp.src(['src/**/*.{js,html}'])
     .pipe(sourcemaps.init())
     .pipe(gulpif('*.html', crisper())) // Extract JS from .html files
@@ -51,7 +51,7 @@ gulp.task('jshint', function () {
     .pipe(gulpif(!bs.active, jshint.reporter('fail')));
 });
 
-gulp.task('polyserve', ['js', 'jshint'], function(cb) {
+gulp.task('polyserve', ['js'], function(cb) {
   ps.lookup({
     command: 'polyserve',
     psargs: '-f'

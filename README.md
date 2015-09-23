@@ -15,6 +15,12 @@ Then, go ahead and download the element's dependencies:
     bower install
 
 
+## ES2015
+
+In this branch, seed-element is written in ES2015. 
+**The source code is now in the `./src` folder.** 
+**Remember that you need to run `gulp js` to compile the code before committing. Otherwise, the element won't be updated for public use.**
+
 ## Playing With Your Element
 
 If you wish to work on your element in isolation, we recommend that you use
