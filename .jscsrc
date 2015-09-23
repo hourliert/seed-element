@@ -1,4 +1,5 @@
 {
+  "esnext": true,
   "preset": "google",
   "disallowSpacesInAnonymousFunctionExpression": null,
   "excludeFiles": ["bower_components/**"]
