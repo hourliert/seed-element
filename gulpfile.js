@@ -9,7 +9,7 @@ var gulp        = require('gulp'),
     jshint      = require('gulp-jshint'),
     git         = require('gulp-git'),
     bump        = require('gulp-bump'),
-    tag_version = require('gulp-tag-version'),
+    tagVersion = require('gulp-tag-version'),
     filter      = require('gulp-filter');
 
 var POLYSERVE_PORT = 8080,
@@ -100,7 +100,7 @@ function inc(importance) {
     // read only one file to get the version number
     .pipe(filter('bower.json'))
     // **tag it in the repository**
-    .pipe(tag_version());
+    .pipe(tagVersion());
 }
 
 gulp.task('patch', function() { return inc('patch'); });
